@@ -4,7 +4,8 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 html,
@@ -30,9 +31,13 @@ body {
   width: 100%;
   height: 40px;
   background-color: tomato;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   padding-left: 20px;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   z-index: 10;
   opacity: 0.85;
 }
@@ -51,22 +56,34 @@ body {
 }
 
 .content {
-  flex: 1;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
   width: calc(100% - (60px));
   min-height: 180vh;
   height: 100%;
   padding: 16px 24px;
   background: #eee;
-  transform: translate3d(60px, 0, 0);
+  -webkit-transform: translate3d(60px, 0, 0);
+          transform: translate3d(60px, 0, 0);
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: -webkit-transform 0.3s;
   transition: transform 0.3s;
+  transition: transform 0.3s, -webkit-transform 0.3s;
 }
 .content.isOpen {
   width: calc(100% - (220px));
-  transform: translate3d(220px, 0, 0);
+  -webkit-transform: translate3d(220px, 0, 0);
+          transform: translate3d(220px, 0, 0);
 }
 .content .inner-contents {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 .content .section {
   margin-top: 32px;
@@ -90,6 +107,7 @@ body {
 .button:before {
   content: "";
   font: 32px fontawesome;
+  -webkit-transition: 0.2s;
   transition: 0.2s;
 }
 .button:hover {
@@ -117,8 +135,12 @@ body {
 }
 .title.isClose {
   font-size: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   padding-left: 20px;
   width: 60px;
 }
@@ -134,6 +156,7 @@ body {
   font-size: 14px;
   color: #eee;
   border-bottom: 1px solid #222;
+  -webkit-transition: 0.3s;
   transition: 0.3s;
 }
 .nav li a:hover {
@@ -142,7 +165,8 @@ body {
   cursor: pointer;
 }
 .nav li a.active, .nav li a:active {
-  box-shadow: inset 5px 0 0 #5b5, inset 6px 0 0 #222;
+  -webkit-box-shadow: inset 5px 0 0 #5b5, inset 6px 0 0 #222;
+          box-shadow: inset 5px 0 0 #5b5, inset 6px 0 0 #222;
   background: #699;
 }
 .nav li a:before {
